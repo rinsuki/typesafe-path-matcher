@@ -1,11 +1,11 @@
 {
   "name": "typesafe-path-matcher",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "prepack" : "yarn prepare",
+    "prepack": "yarn prepare",
     "prepare": "rm -r lib && tsc",
     "build": "tsc"
   },
