@@ -17,7 +17,7 @@ export function match<AST extends PathAST>(
             const value = i === -1 ? nowTarget : nowTarget.slice(0, i)
             if (value === "") return undefined
             ;(result as Partial<Record<string, string>>)[block.name] = value
-            nowTarget = nowTarget.slice(i)
+            nowTarget = i === -1 ? "" : nowTarget.slice(i)
         }
     }
     if (exact && nowTarget.length) return undefined
