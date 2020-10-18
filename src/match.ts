@@ -4,6 +4,7 @@ import { PathAST } from "./parser"
 export function match<AST extends PathAST>(
     ast: AST,
     target: string,
+    exact = true,
 ): Params<AST> | undefined {
     var nowTarget = target
     var result: Partial<Params<AST>> = {}
@@ -19,5 +20,6 @@ export function match<AST extends PathAST>(
             nowTarget = nowTarget.slice(i)
         }
     }
+    if (exact && nowTarget.length) return undefined
     return result as Params<AST>
 }
